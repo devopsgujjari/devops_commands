@@ -1,0 +1,23 @@
+--- # installing httpd service and starting
+-   hosts: centos
+    remote_user: ansible
+    become: yes
+    become_method: sudo
+    gather_facts: yes
+    connection: ssh
+
+    tasks:
+      - name: install httpd service on centos
+        yum:
+            name: httpd
+            state: latest
+        notify:
+          - service_start
+    handlers:
+    - name: service_start
+      service:
+          name: httpd
+          state: restarted
+
+
+
