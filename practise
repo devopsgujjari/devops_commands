@@ -1,0 +1,24 @@
+http://192.168.33.79:8070/nexus/content/repositories/releases/ --relese
+
+http://192.168.33.79:8070/nexus/content/repositories/snapshots/ --snapshot
+
+<distributionManagement>
+    		<snapshotRepository>
+      			<id>deployment</id>
+      			<name>my snapshot repository</name>
+      			<url>http://192.168.33.79:8080/nexus/content/repositories/snapshots/</url>
+    		</snapshotRepository>
+    		<repository>
+      			<id>deployment</id>
+      			<name>my Release repository</name>
+      			<url>http://192.168.33.79:8080/nexus/content/repositories/releases/</url>
+    		</repository>
+ </distributionManagement>
+
+
+<server>
+    	  	<id>deployment</id>
+      		<username>admin</username>
+      		<password>admin123</password>
+</server>
+

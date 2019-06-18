@@ -1,0 +1,82 @@
+git commands 
+
+git init for creating local repository
+
+git config --global user.name sai
+
+git config --global user.email narendrasai316@gmail.com
+
+git config --list
+
+git add filename to stage environment
+
+git commit -m "message for upload to local repository"
+
+git remote add origin url 
+
+git push origin master
+
+to create bare repository git init --bare
+
+ssh root@ip to login in to remote system(destination) from devolopers system(source)
+
+to authenticate we have to modify file sshd_config in /etc/ssh/sshd_config
+
+edit these 3 
+	permitroot login          enable
+	pubkey authentication      enable
+	password authentication    yes
+
+systemctl stop sshd
+systemctl status sshd
+systemctl stop sshd
+
+sudo passwd root
+
+create new password
+
+sudo bash
+
+password N@rendr@s@i888
+
+to connect password less authentication generate keys
+
+ssh-keygen
+
+they are stored in .ssh folder in c /user/naren
+
+ssh-copy-id root@ip
+
+git remote add origin root@1ip:/root/git
+
+if any mistakes in giving the path go to reset above link : git remote set-url origin root@ip:path of repository
+
+git blame filename
+
+git mergetool
+
+git log
+
+git log --oneline
+
+git branch                                          to know how many branches in that workspace
+
+git branch <branch name>                            to create new branch
+
+git checkout <branch name>                          to change from one branch to other
+
+git checkout -b <branch name>                       to create new branch and to change to that branch
+
+git branch -v                                       to know latest commits in every branch in that workspace
+
+git branch -a                                       to list the local and remote branches
+
+git branch -r                                       to list remote branches
+
+git branch -d <branch name>                         to delete the branch in local repo. it shows warning when we dont merge properly before deleting 
+
+git branch -D <branch name>                         to delete the branch in local repo without any warning
+
+git push <remote repo> :refs/heads/branch name      to delete branch in remote repo
+
+git tag 

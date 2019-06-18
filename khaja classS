@@ -1,0 +1,47 @@
+khaja class
+
+packer is for reuseable images
+
+teraform is  reuseable environments it gives working architecture 
+
+both are hydempotent (consistent) . install only once in one machine and next time you run it it dont effect the installed one.
+
+nginx is a webserver it can be used to host websites.
+
+in packer we have 3 sections they are 1. Builders          ---         in this we have to mention that in which environment you are going to image   
+                                                                       ex:AWS,AZURE,GOOGLE CLOUD,VM WARE,ORACLE VIRTUALBOX etc...,
+                                      2.Provisionrs        ---         in this we have to excute the required commands on that shell. customize the 
+                                                                       enivronment
+                                                                       ex:sudo apt-get update , sudo apt-get install nginx -y
+                                      3. post-processor    ---         to convert yhis into our required format
+                                                                       ex: convert packer into docker image.
+
+JSON --- java script object oriented notation 
+
+format of JSON is a simple key-value pairs 
+{
+1. simple key value pair 
+{
+	"id" : "101",
+	"name" : "sai",
+	"refered" : true,
+	"age" : 23,
+}
+
+2. complex key-value pair
+{
+	"Adress" : {
+				"adress1" : "street1",
+				"land mark" : "near temple",
+				"state" : "andhra pradesh",
+				"pincode" : 522615,
+				}
+}
+
+3. multipler or list key-pair 
+{
+	"courses" : ["devops", "cloud"]
+}
+}
+everything in the curly brases of json script is "OBJECTS"
+

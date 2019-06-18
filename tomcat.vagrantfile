@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+HOST_IP1 = '192.168.33.49'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+config.vm.define "tomcat" do |tomcat|
+tomcat.vm.hostname = "tomcat"
+tomcat.vm.box = "bento/centos-7.2"
+tomcat.vm.box_check_update = "false"
+tomcat.vm.network :private_network,
+    ip:HOST_IP1,
+    netmask:'255.255.255.0'
+tomcat.vm.network :forwarded_port, guest: 80, host: 8082
+tomcat.vm.provision "shell", path: "tomcat.sh"
+end
+end

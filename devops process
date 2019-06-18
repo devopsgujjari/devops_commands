@@ -1,0 +1,89 @@
+
+
+vagrant init
+
+vagrant up
+
+move to root
+
+create dir
+
+jdk installation
+
+wget jdk url
+
+tarball extraction
+
+export enironmental variables
+
+check java version
+
+maven installation
+
+wget maven url
+
+tarball extraction
+
+export enivronmental variables
+
+check maven version
+
+generate archetypes simple
+
+package archetypes
+
+upload artifacts to local repository
+
+customise local repository of maven in conf/settings.xml
+
+install tomcat
+
+wget tomcat url
+
+extract tarball
+
+verify version of tomcat in bin ./version.sh
+
+start tomcat from bin ./startup.sh
+
+to shutdown use ./shutdown.sh
+
+check server work or not by ps -ef | grep tomcat
+
+install net-tools
+
+check port listen or not by netstat -tan | grep 8080
+
+check url of tomcat
+
+to use manager app 
+
+configure settings in manager/META_INF/context.xml
+
+and give roles in tomcat_user.xml
+
+and one more important file is server.xml 
+
+download nexus war 
+
+and place in tomcat webapps folder
+
+and access nexus 
+
+snapshot and release
+
+take urls
+
+and make distribution management element
+
+and place it in pom.xml file
+
+and server detalis authontication purpose use in conf/settings.xml
+
+and upload artifacts into remote repository 
+
+
+
+
+
+

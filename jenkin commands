@@ -1,0 +1,54 @@
+jenkin commands
+
+hostnamectl set-hostname <name>                         to change hostname in linux machine
+
+export JENKINES_HOME=/home/vagrant/jenkin               to change jenkin home directory
+
+java -jar jenkins.war                                   to install on jenkin on shell
+
+pass --httpport=8070                                    to change port number of jenkin
+
+java -jar jenkins.war --httpPort=8070                   to install and change port number at a time
+
+scp <source path> user@ip:<destination path>            to copy file from one linux to other linux
+
+In the slave node creation the credentials for node is add MASTER private key to credential for SSH communication.
+
+we have to add tools in 3 scopes they are 1. global level (master)
+										  2. node level (slave)
+										  3. job level 
+
+At global we can add multiple versions of tools of same tools ex: java8 and java9 or maven2 and maven3
+
+At node level we have to specifiy the paths of required version of tool where the tool is install in the slave machine and also give environmental veriables like java ,maven homes and path variable.
+
+At job level we can simply select the version and give the command (in Build section)
+
+At Job level we have 3 sections they are 1. pre Build section
+										 2. Build section
+										 3. post Build section
+
+We have to clear idea about up stream and down stream job 
+
+for up stream job to mention the build next job we have to mention in the post build section and give "build other projects"
+
+In the middle level job we have dependency on before job (up stream) we mention in the Pre Build section (build after other projects) and after thet to perform build (down stream) mention in the post build section.
+
+For static analysis or code evalution we use the plugin called COBERTURA . and this also used to publish the code coverage reports.
+
+the code coverage reports are available in the target folder the path is /target/site/cobertura/coverage.xml
+
+in the packageing section we have to use same code which is done static analysis to pull this code we use another plugin called CLONE WORKSPACE SCM.
+
+for package of artifacts and to publish we need location i.e **/*
+
+for publish the Junit test reports we need location i.e target/surefire-reports/*.xml
+
+copy artifacts files **/*
+
+deploy to war/ear to container **/*.war
+
+build periodically cronjob
+
+poll scm to build when the changes occur in the scm
+

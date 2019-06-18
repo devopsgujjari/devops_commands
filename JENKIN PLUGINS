@@ -1,0 +1,18 @@
+JENKIN PLUGINS
+
+
+New view                                                                  BUILD PIPELINE                                                                       
+
+static analysis                                                           COBERTURA
+
+unit test cases                                                           JUNIT
+
+clone work space from one job to another in pipe line                     CLONE WORKSPACE SCM
+
+copy artifacts from one job to another job                                COPY ARTIFACTS
+
+deploy to stage environment                                               DEPLOY TO CONTAINER
+
+to view pipeline                                                          BLUE OCEAN 
+
+for deploy to container in pipeline                                       ssh pipeline steps
