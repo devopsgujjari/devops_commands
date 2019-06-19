@@ -1,0 +1,49 @@
+--- # install jdk on centos systems
+-   hosts: '{{hostname}}'
+    remote_user: '{{username}}'
+    become: yes
+    become_method: '{{method}}'
+    gather_facts: yes
+    connection: ssh
+    vars:
+
+      hostname: centos
+      username: ansible
+      method: sudo
+
+    tasks:
+      - name: uploading file to the remote system
+
+        copy:
+
+           src: /opt/java8.sh
+           dest: /home/ansible/
+           mode: 0755
+      - name: run the programme
+
+        shell: /home/ansible/java8.sh
+
+      - name: Exporting java environmental variables to .bashrc
+
+        lineinfile:
+           path: /home/ansible/.bashrc
+           regexp: '^export JAVA_HOME'
+           insertafter: '^# User'
+           line: export JAVA_HOME=/home/ansible/java/java8
+
+      - name: Exporting java environmental variables to .bashrc
+
+        lineinfile:
+           path: /home/ansible/.bashrc
+           regexp: '^export PATH'
+           insertafter: '^export'
+           line: export PATH=$JAVA_HOME/bin:$PATH
+
+      - name: sourcing the .bashrc
+        shell: source /home/ansible/.bashrc
+        args:
+           executable: /bin/bash
+      - name: knowing the java version
+        shell: java -version
+        register: result
+      - debug: var=result
