@@ -1,0 +1,17 @@
+--- # installing telnet package
+-   hosts: '{{hostname}}'
+    remote_user: '{{username}}'
+    become: yes
+    become_method: '{{method}}'
+    gather_facts: yes
+    connection: ssh
+    vars:
+       hostname: centos
+       username: ansible
+       method: sudo
+       package: telnet
+    tasks:
+     - name: install telnet packs
+       yum:
+          name: '{{package}}'
+          state: present
